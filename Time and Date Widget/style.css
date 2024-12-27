@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #a3c4fc, #fbc8d4);  /* Soft gradient background */
+    overflow: hidden; /* Prevents overflow */
+}
+
+.widget {
+    background: #2c3e50;
+    padding: 30px;
+    border-radius: 30px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+    width: 350px;
+    border: 4px solid #34495e;
+    animation: fadeIn 1s ease-in-out, pulse 3s infinite; /* Fade and pulse animation */
+    overflow: hidden; /* Prevents the time from overflowing */
+    position: relative;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.time-date-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    flex-wrap: wrap; /* Ensures the time and date wrap on smaller screens */
+}
+
+.time {
+    font-size: 60px;
+    font-weight: bold;
+    color: #f39c12;
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4); /* Stronger glow effect */
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Added shadow transition */
+    word-wrap: break-word; /* Ensures text wraps within the container */
+    max-width: 100%; /* Ensures the time element doesn't exceed the container width */
+}
+
+.time:hover {
+    transform: scale(1.1); /* Time grows slightly on hover */
+    text-shadow: 4px 4px 25px rgba(255, 255, 255, 0.6); /* More glowing effect on hover */
+}
+
+.date {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ecf0f1;
+    margin-left: 15px;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0.85;
+    transition: opacity 0.3s ease, color 0.3s ease; /* Color and opacity transition */
+}
+
+.date:hover {
+    opacity: 1; /* Date gets brighter on hover */
+    color: #f39c12; /* Color change on hover */
+}
+
+@media (max-width: 500px) {
+    .widget {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .time {
+        font-size: 50px;
+    }
+
+    .date {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 350px) {
+    .widget {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .time {
+        font-size: 45px;
+    }
+
+    .date {
+        font-size: 18px;
+    }
+}
